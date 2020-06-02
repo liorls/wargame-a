@@ -3,19 +3,24 @@
 #include <stdexcept>
 #include <math.h>
 #include <vector>
-#include <iostream>
 
 using namespace std;
 class Soldier
 {
 
 public:
-    int numPlayer;    //uint ??
+    int numTeam;
+    int startPoint;
     int numHealth;
     int numDamage;
-    Soldier(int numP, int numH, int numD): numPlayer(numP), numHealth(numH), numDamage(numD) {}
-    ~Soldier() {}
-  //  virtual void attack (std::vector<std::vector<Soldier*>> &b, pair<int,int> location) = 0;
+    Soldier(int numT, int sP, int numH, int numD): numTeam(numT), startPoint(sP), numHealth(numH), numDamage(numD) {}
+  virtual  ~Soldier() {}
+
+  double distance(int x1, int y1, int x2, int y2){
+    return sqrt(pow(x1-x2,2)+pow(y1-y2,2));
+  }
+
+  virtual void attack (vector<vector<Soldier*>> &b, pair<int,int> location) = 0;
 
 
 };
