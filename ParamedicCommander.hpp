@@ -1,10 +1,12 @@
-#include <iostream>
-#include "Soldier.hpp"
+#pragma once
+#include "Paramedic.hpp"
 
-class ParamedicCommander : public Soldier {
+class ParamedicCommander : public Paramedic {
 
 public:
-    ParamedicCommander(int pc): Soldier(pc, 200, 0, 200) {}
+    ParamedicCommander(int numTeam, int startPoint = 200, int numD = 0, int numH =  200): Paramedic(numTeam) {}
 
     void attack(vector<vector<Soldier*>> &b, pair<int,int> location);
 };
+
+

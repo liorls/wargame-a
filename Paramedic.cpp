@@ -1,4 +1,4 @@
 #include <iostream>
 #include "Paramedic.hpp"
 
-//void attack(vector<vector<Soldier*>> &b, pair<int,int> location){}
+void Paramedic::attack(vector<vector<Soldier*>> &b, pair<int,int> location){}
